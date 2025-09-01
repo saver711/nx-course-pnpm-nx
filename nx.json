@@ -1,19 +1,18 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "namedInputs": {
+    "sharedGlobals":["{workspaceRoot}/.github/workflows/verify.yml"],
+    "default": ["sharedGlobals"]
+  },
   "targetDefaults": {
     "build": {
-      "dependsOn": [
-        "^build"
-      ],
+      "dependsOn": ["^build"],
       "inputs": ["{projectRoot}/.next"],
       "cache": true
     },
-    "e2e": {
-      "cache": true
-    },
-    "lint": {
-      "cache": true
-    }
+    "e2e": { "cache": true },
+    "lint": { "cache": true }
   },
-  "defaultBase": "main"
+  "defaultBase": "main",
+  "nxCloudId": "68b5dafaf657e287c0bb1bf9"
 }
