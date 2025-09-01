@@ -44,9 +44,7 @@ export default function Login(): JSX.Element {
       <div className="w-full max-w-md space-y-4 rounded-lg bg-white p-6 shadow-lg">
         <div className="space-y-2">
           <h2 className="text-2xl font-bold">Welcome back</h2>
-          <p className="text-gray-500">
-            Enter your email and password to sign in.
-          </p>
+          <p className="text-gray-500">Enter your email and password.</p>
         </div>
         <form className="space-y-4" onSubmit={handleSubmit}>
           <div className="space-y-2">

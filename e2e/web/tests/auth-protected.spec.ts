@@ -36,7 +36,7 @@ test('Logout and Re-Login Test', async ({ page }) => {
 
   await login(page, {
     email: 'bob@tasker.io',
-    password: '123456',
+    password: '12345',
   });
 
   await expect(page).toHaveURL('/dashboard');
