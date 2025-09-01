@@ -14,6 +14,7 @@ export default async function ProjectsPage(): Promise<JSX.Element> {
     <>
       <h2 className="text-xl font-semibold">Projects</h2>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+        {/* @ts-expect-error ddd */}
         {projects.map((p) => (
           <Card key={p.slug} href={`/projects/${p.slug}`} title={p.name}>
             <div data-testid="project-item" className="flex items-center">

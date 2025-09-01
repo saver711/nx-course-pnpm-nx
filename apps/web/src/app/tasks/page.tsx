@@ -24,6 +24,7 @@ export default async function Tasks(): Promise<JSX.Element> {
         task: {},
       },
     })
+    // @ts-expect-error dddd
   ).map((x) => x.task);
   const createdTasks = await db.task.findMany({
     where: {

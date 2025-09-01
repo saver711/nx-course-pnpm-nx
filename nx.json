@@ -5,6 +5,7 @@
       "dependsOn": [
         "^build"
       ],
+      "inputs": ["{projectRoot}/.next"],
       "cache": true
     },
     "e2e": {
@@ -14,5 +15,5 @@
       "cache": true
     }
   },
-  "defaultBase": "master"
+  "defaultBase": "main"
 }
