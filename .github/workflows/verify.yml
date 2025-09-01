@@ -9,29 +9,34 @@ jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
+
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
           node-version: lts/*
+
       - uses: pnpm/action-setup@v4
         name: Install pnpm
         with:
           version: 9
           run_install: false
+
       - name: Install dependencies
         run: pnpm install
+
       - name: Install Playwright Browsers
-        run: pnpm --filter "@tasker/e2e-web" exec playwright install --with-deps
-      - name: Run Checks/Lint/Build
-        run: |
-          pnpm format:check
-          pnpm lint
-          pnpm --filter "@tasker/web" build
-          pnpm --filter "@tasker/*" test
-      - name: Run Playwright tests
-        run: pnpm --filter "@tasker/e2e-web" e2e
+        run: pnpm exec playwright install --with-deps
+
+      # ✅ Run only on affected projects
+      - name: Run checks (format, lint, test, build)
+        run: pnpm nx affected -t format:check lint build test --parallel=3
+
+      - name: Run Playwright E2E tests
+        run: pnpm nx affected -t e2e
+
       - uses: actions/upload-artifact@v4
         if: always()
         with:
