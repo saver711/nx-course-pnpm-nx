@@ -1,5 +1,9 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "namedInputs": {
+    "sharedGlobals":["{workspaceRoot}/.github/workflows/verify.yml"],
+    "default": ["sharedGlobals"]
+  },
   "targetDefaults": {
     "build": {
       "dependsOn": ["^build"],

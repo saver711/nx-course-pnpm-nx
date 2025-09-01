@@ -31,7 +31,9 @@
   "nx": {
     "targets": {
       "start": {
-        "dependsOn": ["build"]
+        "dependsOn": [
+          "build"
+        ]
       }
     }
   }

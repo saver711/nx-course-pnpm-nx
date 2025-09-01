@@ -10,6 +10,8 @@
     "@types/node": "^20.12.11"
   },
   "nx": {
-    "implicitDependencies": ["@tasker/web"]
+    "implicitDependencies": [
+      "@tasker/web"
+    ]
   }
 }

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { JSX } from 'react';
 import { cookies } from 'next/headers';
 import { CreatedTasks, MyTasks } from '@tasker/tasks-widgets';
@@ -24,8 +25,7 @@ export default async function Tasks(): Promise<JSX.Element> {
         task: {},
       },
     })
-    // @ts-expect-error dddd
-  ).map((x) => x.task);
+  ).map((x: any) => x.task);
   const createdTasks = await db.task.findMany({
     where: {
       deleted: false,

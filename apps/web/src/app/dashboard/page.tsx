@@ -42,8 +42,9 @@ export default async function Page(): Promise<JSX.Element> {
         task: {},
       },
     })
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  ).map((x: { task: any; }) => x.task);
+  )
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    .map((x: { task: any }) => x.task);
   return (
     <div className="flex h-screen w-full">
       <div className="flex w-64 flex-col items-start justify-between border-r bg-white p-8">
