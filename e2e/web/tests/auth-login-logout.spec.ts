@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test';
 
-test('Auth Test: protected URLs', async ({ browser }) => {
+test('Auth Test : protected URLs', async ({ browser }) => {
   const context = await browser.newContext();
   const page = await context.newPage();
 
